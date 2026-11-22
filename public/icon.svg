@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Truce: calm water drop. Source for every app icon (see scripts/icons.mjs). -->
+  <defs><clipPath id="water"><circle cx="256" cy="322" r="96"/></clipPath></defs>
+  <rect width="512" height="512" rx="115" fill="#2a8c87"/>
+  <g id="drop">
+    <path d="M256 92C256 92 136 228 136 322a120 120 0 0 0 240 0C376 228 256 92 256 92Z" fill="#fff"/>
+    <path clip-path="url(#water)" d="M140 318c38-22 74 20 116 0s78 20 116 0v122H140Z" fill="#9fd3cf"/>
+  </g>
+</svg>

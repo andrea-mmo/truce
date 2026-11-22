@@ -1,0 +1,17 @@
+# Cloudflare Pages (static site + Pages Functions in ./functions). Deploy: npm run deploy
+name = "piel"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-11-01"
+
+# Encrypted sync storage (Phase 5). Rows are ciphertext produced on the device.
+[[d1_databases]]
+binding = "DB"
+database_name = "piel-sync"
+database_id = "<your-d1-database-id>"
+migrations_dir = "migrations"
+
+# Cloudflare Access: the API only trusts requests with a valid Access token
+# for this application (team domain + application AUD tag). Not secrets.
+[vars]
+ACCESS_TEAM = "<your-access-team>"
+ACCESS_AUD = "<your-access-application-aud>"

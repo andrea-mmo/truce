@@ -1,0 +1,16 @@
+node_modules
+dist
+dev-dist
+.env.local
+.env*.local
+.DS_Store
+coverage
+*.tsbuildinfo
+.wrangler
+
+# Personal data backups (health data): never commit
+backups/
+
+# Copied from node_modules by scripts/copy-ocr.mjs
+public/ocr/
+dist-demo

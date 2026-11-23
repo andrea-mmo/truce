@@ -30,10 +30,11 @@ export type OcrProgress = { stage: 'loading' | 'reading'; pct: number };
 export async function readLabelOnDevice(files: Blob[], onProgress?: (p: OcrProgress) => void): Promise<LabelResult> {
   const { createWorker, OEM } = await import('tesseract.js');
   let current = 0;
+  const base = import.meta.env.BASE_URL;
   const worker = await createWorker('eng', OEM.LSTM_ONLY, {
-    workerPath: '/ocr/worker.min.js',
-    corePath: '/ocr/core',
-    langPath: '/ocr/lang',
+    workerPath: `${base}ocr/worker.min.js`,
+    corePath: `${base}ocr/core`,
+    langPath: `${base}ocr/lang`,
     workerBlobURL: false,
     logger: (m) => {
       if (m.status === 'recognizing text') onProgress?.({ stage: 'reading', pct: Math.round(((current + m.progress) / files.length) * 100) });

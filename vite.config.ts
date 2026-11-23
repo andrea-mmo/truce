@@ -28,7 +28,10 @@ function demoSeed(): Plugin {
 
 export default defineConfig(({ mode }) => {
   const demo = mode === 'demo';
+  // The demo can live under a sub-path (GitHub Pages: DEMO_BASE=/truce/). Everything else stays at '/'.
+  const base = demo && process.env.DEMO_BASE ? process.env.DEMO_BASE : '/';
   return {
+  base,
   define: { __APP_VERSION__: JSON.stringify(demo ? `${APP_VERSION} · demo` : APP_VERSION) },
   // Separate folder so a demo build never overwrites the private one.
   build: { outDir: demo ? 'dist-demo' : 'dist' },
@@ -51,7 +54,8 @@ export default defineConfig(({ mode }) => {
         theme_color: '#f4f7f8',
         background_color: '#f4f7f8',
         display: 'standalone',
-        start_url: '/',
+        start_url: base,
+        scope: base,
         icons: [
           { src: 'icon-192.png', sizes: '192x192', type: 'image/png' },
           { src: 'icon-512.png', sizes: '512x512', type: 'image/png' },

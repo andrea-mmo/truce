@@ -3,7 +3,7 @@
 <h1 align="center">Truce</h1>
 <p align="center"><b>Make peace with your skin.</b><br/>A skincare routine organiser that helps you find out what doesn't suit you, one product at a time.</p>
 
-<p align="center"><a href="https://truce-demo.pages.dev"><b>Try the live demo →</b></a><br/><sub>Invented data · nothing leaves your browser · English and Spanish</sub></p>
+<p align="center"><a href="https://andrea-mmo.github.io/truce/"><b>Try the live demo →</b></a><br/><sub>Invented data · nothing leaves your browser · English and Spanish</sub></p>
 
 <p align="center">
   <img src="docs/screenshots/today.jpg" width="200" alt="Today: greeting, a professional-advice alert and the morning routine" />
